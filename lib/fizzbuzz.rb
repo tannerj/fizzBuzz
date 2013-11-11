@@ -1,10 +1,13 @@
+require "./errors"
+
 module FizzBuzz
+	
 	class FizzBuzz
 		attr_reader :output
 
 		def initialize(initial: 0, last: 100)
 			if initial > last
-				raise "The initial value must be smaller than the last value."
+				raise InitializeError, "The initial value must be smaller than the last value."
 			end
 			@initial					= initial
 			@last							= last
@@ -79,6 +82,6 @@ end
 begin
 	fizzbuzz = FizzBuzz::FizzBuzz.new( initial: 0, last: 200 )
 	fizzbuzz.start {|number| puts number}
-rescue Exception => e
+rescue FizzBuzz::InitializeError => e
 	puts e.message
 end
