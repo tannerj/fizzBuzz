@@ -1,4 +1,4 @@
-require "./errors"
+require File.expand_path(File.dirname(__FILE__) + '/errors')
 
 module FizzBuzz
 	
@@ -50,7 +50,7 @@ module FizzBuzz
 			buzz = buzz?( number )
 			
 			if fizz && buzz
-				return "FizzBuzz (#{number}) "
+				return "FizzBuzz (#{number})"
 			elsif fizz
 				return "Fizz (#{number})"
 			elsif buzz
@@ -79,9 +79,9 @@ module FizzBuzz
 	end
 end
 
-begin
-	fizzbuzz = FizzBuzz::FizzBuzz.new( initial: 0, last: 200 )
-	fizzbuzz.start {|number| puts number}
-rescue FizzBuzz::InitializeError => e
-	puts e.message
-end
+#begin
+#	fizzbuzz = FizzBuzz::FizzBuzz.new( initial: 0, last: 200 )
+#	fizzbuzz.start {|number| puts number}
+#rescue FizzBuzz::InitializeError => e
+#	puts e.message
+#end
