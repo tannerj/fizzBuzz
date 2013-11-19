@@ -1,7 +1,7 @@
 FizzBuzz
-==================================================================
+========
 
-###A FizzBuzz implementation used to learn github, ruby, TDD, & ruby gems
+####A FizzBuzz implementation used to learn github, ruby, TDD, & ruby gem creation
 
 This is a simple FizzBuzz application that I've over engineered to
 get some practice using ruby to create larger systems. I'm also 
