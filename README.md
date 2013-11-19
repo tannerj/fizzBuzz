@@ -1,5 +1,4 @@
-FizzBuzz
-========
+#FizzBuzz
 
 ####A FizzBuzz implementation used to learn github, ruby, TDD, & ruby gem creation
 
