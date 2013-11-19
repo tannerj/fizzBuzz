@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require "./lib/fizzbuzz"
+require File.expand_path(File.dirname(__FILE__) + '/../lib/fizzBuzz')
 
 class TestFizzBuzz < MiniTest::Test
 	
