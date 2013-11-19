@@ -1,5 +1,7 @@
-FizzBuzz Implementation to practice ruby testing and gem creation
-=================================================================
+FizzBuzz
+==================================================================
+
+###A FizzBuzz implementation used to learn github, ruby, TDD, & ruby gems
 
 This is a simple FizzBuzz application that I've over engineered to
 get some practice using ruby to create larger systems. I'm also 
