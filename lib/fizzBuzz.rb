@@ -9,10 +9,10 @@ module FizzBuzz
 			if initial > last
 				raise InitializeError, "The initial value must be smaller than the last value."
 			end
-			@initial					= initial
-			@last							= last
-			@currentPosition 	= @initial
-			@output 					= []
+			@initial = initial
+			@last = last
+			@currentPosition = @initial
+			@output = []
 		end
 
 		def start(&block)
