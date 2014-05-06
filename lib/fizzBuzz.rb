@@ -2,81 +2,81 @@ require File.expand_path(File.dirname(__FILE__) + '/errors')
 
 module FizzBuzz
 	
-	class FizzBuzz
-		attr_reader :output
+  class FizzBuzz
+    attr_reader :output
 
-		def initialize(initial: 0, last: 100)
-			if initial > last
-				raise InitializeError, "The initial value must be smaller than the last value."
-			end
-			@initial = initial
-			@last = last
-			@currentPosition = @initial
-			@output = []
-		end
+    def initialize(initial: 0, last: 100)
+      if initial > last
+        raise InitializeError, "The initial value must be smaller than the last value."
+      end
+      @initial = initial
+      @last = last
+      @currentPosition = @initial
+      @output = []
+    end
 
-		def start(&block)
-			numberRangeIterator
-			if block_given?
-				@output.each(&block)
-			else
-				@output
-			end
-		end
+    def start(&block)
+    numberRangeIterator
+      if block_given?
+        @output.each(&block)
+      else
+        @output
+      end
+    end
 
-		private
+    private
 
-		def numberRangeIterator
-			while @currentPosition <= @last do
-				#Zero is a special case because that is what we test for
-				#in fizz? and buzz?
-				if @currentPosition != 0
-					@output << fizzBuzz( @currentPosition )
-				else
-					@output << @currentPosition
-				end
-				updatePosition 
-			end
-			return @output
-		end
+    def numberRangeIterator
+      while @currentPosition <= @last do
+        #Zero is a special case because that is what we test for
+        #in fizz? and buzz?
+        if @currentPosition != 0
+          @output << fizzBuzz( @currentPosition )
+        else
+          @output << @currentPosition
+        end
+        updatePosition 
+      end
+      return @output
+    end
 
-		def updatePosition
-			@currentPosition += 1
-		end
+    def updatePosition
+      @currentPosition += 1
+    end
 
-		def fizzBuzz( number )
+    def fizzBuzz( number )
 			
-			fizz = fizz?( number )
-			buzz = buzz?( number )
+      fizz = fizz?( number )
+      buzz = buzz?( number )
 			
-			if fizz && buzz
-				return "FizzBuzz (#{number})"
-			elsif fizz
-				return "Fizz (#{number})"
-			elsif buzz
-				return "Buzz (#{number})"
-			end
+      if fizz && buzz
+        return "FizzBuzz (#{number})"
+      elsif fizz
+        return "Fizz (#{number})"
+      elsif buzz
+        return "Buzz (#{number})"
+		  end
 
-			#If we dont' fizz or buzz, we return the original number
-			return number
-		end
+      #If we dont' fizz or buzz, we return the original number
+      return number
+    end
 
-		def fizz?( number )
-			if  number % 3 == 0
-				return true
-			else
-				return false
-			end
-		end
+    def fizz?( number )
+      if  number % 3 == 0
+        return true
+      else
+        return false
+      end
+    end
 
-		def buzz?( number )
-			if number % 5 == 0
-				return true
-			else
-				return false
-			end
-		end
-	end
+    def buzz?( number )
+      if number % 5 == 0
+        return true
+      else
+        return false
+      end
+    end
+  end
 end
 
 #begin
