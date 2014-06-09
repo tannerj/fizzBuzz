@@ -1,4 +1,4 @@
-require_relative 'fizz_buzz.rb'
+require_relative 'fizz_buzz'
 
 module FizzBuzz
   class Application
@@ -9,7 +9,7 @@ module FizzBuzz
     end
     
     def run
-      100.times do |number|
+      (1..100).each do |number|
         fizz = @fizz_buzz.fizz(number)
         buzz = @fizz_buzz.buzz(number)
         if fizz && buzz then puts "fizzBuzz"
