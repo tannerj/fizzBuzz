@@ -1,3 +1,4 @@
+require_relative 'errors'
 require_relative 'fizz_buzz'
 
 module FizzBuzz
